@@ -1,5 +1,9 @@
 This is our test file.
 
+<<<<<<< HEAD
 Viet changed this line.
 
 This is next.
+=======
+This statement is false.
+>>>>>>> f737fb7b1cd4fbbf6810c69b64f4a0f76f369a12
