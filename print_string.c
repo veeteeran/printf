@@ -15,14 +15,14 @@ int print_string(va_list args)
 	
 	char *p;
 	
-	int size;
+	int s;
 
 
 	p = va_arg(args, char *);
-	size = _strlen(p);
+	s = _strlen(p);
 	/* write included from <unistd.h> */
 	write(1, p, size);
-	return (size);
+	return (s);
 }
 
 /**
