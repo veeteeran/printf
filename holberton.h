@@ -17,4 +17,7 @@ typedef struct format
 
 int _putchar(char c);
 void print_char(va_list args);
+void print_string(va_list args);
+void print_per(void);
+int _strlen(char *s);
 #endif /* HOLBERTON_H */
