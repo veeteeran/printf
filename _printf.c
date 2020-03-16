@@ -1,8 +1,9 @@
 #include "holberton.h"
 /**
+ * _printf - prints formatted output
+ * @format: string to print along with format specifiers
  *
- *
- *
+ * Return: number of chars printed excluding null byte
  */
 int _printf(const char *format, ...)
 {
@@ -10,6 +11,7 @@ int _printf(const char *format, ...)
 		{"c", print_char},
 		{"s", print_string},
 		{"d", print_dec},
+		{"i", print_int},
 		{NULL, NULL}
 	};
 	int i, j, count = 0;
