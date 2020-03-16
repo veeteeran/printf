@@ -8,31 +8,36 @@ int _printf(const char *format, ...)
 {
 	fmt_t types[] = {
 		{"c", print_char},
+		{"s", print_string},
 		{NULL, NULL}
 	};
-	int i, j;
+	int i, j, count = 0;
 	va_list vl;
 
 	va_start(vl, format);
 	i = 0;
 	while (format && format[i])
 	{
-		j = 0;
-		while (types[j].s)
+		if (format[i] != '%')
 		{
-			if (format[i] == '%' && format[i + 1] == *(types[j].s))
+			_putchar(format[i]);
+		}
+		else
+		{
+			j = 0;
+			while (types[j].s)
 			{
-				types[j].fptr(vl);
-				i++; /* move i to the placeholder */
+				if (format[i + 1] == *(types[j].s))
+				{
+					count += types[j].fptr(vl);
+					i++; /* move i to the placeholder */
+				}
+				j++;
 			}
-			else
-			{
-				_putchar(format[i]);
-			}
-			j++;
 		}
 		i++;
 	}
 	va_end(vl);
 	_putchar('\n');
+	return (count);
 }

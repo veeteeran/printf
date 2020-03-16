@@ -1,6 +1,7 @@
 #include "holberton.h"
 #include <unistd.h>
 
+
 /**
  * print_string - prints a string
  *
@@ -9,25 +10,19 @@
  * Return: void
  */
 
-void print_string(va_list args)
+int print_string(va_list args)
 {
+	
 	char *p;
-	int size = strlen(p);
-	unsigned int mem;
+	
+	int s;
 
-	mem = calloc(size, sizeof(char));
-	if (mem == NULL)
-	{
-		free(mem);
-		return NULL;
-	}
 
 	p = va_arg(args, char *);
-
-	if (!p)
-		p = "(nil)";
+	s = _strlen(p);
 	/* write included from <unistd.h> */
-	write(1, p, mem);
+	write(1, p, size);
+	return (s);
 }
 
 /**
@@ -40,8 +35,7 @@ int _strlen(char *s)
 {
 	int len;
 
-	for (len = 0; s[len] != '\0'; len++)
-		continue;
+	for (len = 0; s[len] != '\0'; len++);
 
 	return (len);
 }
