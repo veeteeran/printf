@@ -21,7 +21,7 @@ int print_string(va_list args)
 	p = va_arg(args, char *);
 	s = _strlen(p);
 	/* write included from <unistd.h> */
-	write(1, p, size);
+	write(1, p, s);
 	return (s);
 }
 

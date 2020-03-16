@@ -12,12 +12,12 @@
 typedef struct format
 {
 	char *s;
-	void (*fptr)(va_list);
+	int (*fptr)(va_list);
 } fmt_t;
 
 int _putchar(char c);
-void print_char(va_list args);
-void print_string(va_list args);
-void print_per(void);
+int print_char(va_list args);
+int print_string(va_list args);
+int print_per(va_list);
 int _strlen(char *s);
 #endif /* HOLBERTON_H */
