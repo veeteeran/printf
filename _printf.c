@@ -9,6 +9,7 @@ int _printf(const char *format, ...)
 	fmt_t types[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"d", print_dec},
 		{NULL, NULL}
 	};
 	int i, j, count = 0;

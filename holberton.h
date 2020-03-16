@@ -19,5 +19,6 @@ int _putchar(char c);
 int print_char(va_list args);
 int print_string(va_list args);
 int print_per(va_list);
+int print_dec(va_list);
 int _strlen(char *s);
 #endif /* HOLBERTON_H */
