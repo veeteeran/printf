@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  * _printf - prints formatted output
  * @format: string to print along with format specifiers
@@ -7,43 +8,52 @@
  */
 int _printf(const char *format, ...)
 {
-	fmt_t types[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"d", print_dec},
-		{"i", print_int},
-		{"%", print_per},
-		{NULL, NULL}
-	};
-	int i, j, count = 0;
-	va_list vl;
-
-	if (format == NULL)
-		return (-1);
-
-	va_start(vl, format);
-	i = 0;
-	while (format[i])
-	{
-		if (format[i] != '%')
-		{
-			count += _putchar(format[i]);
+        int i, count = 0;
+        va_list vl;
+        if (format == NULL)
+                return (-1);
+        va_start(vl, format);
+        i = 0;
+        while (format[i])
+        {
+                if (format[i] != '%')
+                        count += _putchar(format[i]);
+                else
+                {
+                        i++; /* move i to next char */
+                        if (format[i] == '\0')
+                                return (-1);
+                        else if (format[i] == '%')
+                               _putchar('%');
+			else
+				count += get_format(format[i], vl);
 		}
-		else
+                i++;
+        }
+        va_end(vl);
+        return (count);
+}
+
+int get_format(char format, va_list vl)
+{
+	int i = 0, count;
+
+	 fmt_t types[] = {
+                {'c', print_char},
+                {'s', print_string},
+                {'d', print_dec},
+                {'i', print_int},
+                {'\0', '\0'}
+        };
+
+	while (types[i].s)
+	{
+		if (format == types[i].s)
 		{
-			i++; /* move i to next char */
-			j = 0;
-			while (types[j].s)
-			{
-				if (format[i] == *(types[j].s))
-				{
-					count += types[j].fptr(vl);
-				}
-				j++;
-			}
+                	count = types[i].fptr(vl);
+			return (count);
 		}
 		i++;
 	}
-	va_end(vl);
-	return (count);
+	return (-1);
 }
