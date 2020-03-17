@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 		{"s", print_string},
 		{"d", print_dec},
 		{"i", print_int},
+		{"%", print_per},
 		{NULL, NULL}
 	};
 	int i, j, count = 0;
