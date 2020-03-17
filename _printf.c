@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
  * _printf - prints formatted output
  * @format: string to print along with format specifiers
