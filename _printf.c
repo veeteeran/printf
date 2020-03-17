@@ -46,7 +46,7 @@ int _printf(const char *format, ...)
 
 int get_format(char format, va_list vl)
 {
-	int i = 0, count
+	int i = 0, count;
 
 	fmt_t types[] = {
 		{'c', print_char},
