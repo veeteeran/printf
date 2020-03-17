@@ -19,6 +19,12 @@ int print_string(va_list args)
 
 
 	p = va_arg(args, char *);
+	if (p == NULL)
+	{
+		_printf("(null)");
+		return (-1);
+	}
+
 	s = _strlen(p);
 	/* write included from <unistd.h> */
 	write(1, p, s);
