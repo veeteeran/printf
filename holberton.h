@@ -11,7 +11,7 @@
  */
 typedef struct format
 {
-	char *s;
+	char c;
 	int (*fptr)(va_list);
 } fmt_t;
 
