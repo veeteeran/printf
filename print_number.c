@@ -8,7 +8,7 @@
 int print_number(int n)
 {
 	int digit, counter = 0, was_min = 0, skip_zero = 1;
-	int base_ten = 1000000000, min  = -2147483648;
+	int base_ten = 1000000000, min  = -2147483648, count = 0;
 
 	while (counter < 9)
 	{
@@ -23,6 +23,7 @@ int print_number(int n)
 			}
 			n *= -1;
 			_putchar('-');
+			count++;
 		}
 		/* avoids problems when next digit is zero */
 		digit = (n / base_ten) % 10;
@@ -33,6 +34,7 @@ int print_number(int n)
 		{
 			skip_zero = 0;
 			_putchar(digit + '0');
+			count++;
 			base_ten /= 10;
 
 		}
@@ -43,8 +45,9 @@ int print_number(int n)
 		_putchar(n % 10 + '1');
 	else
 		_putchar(n % 10 + '0');
+		count++;
 
 	if (n < 0)
-		counter++;
-	return (counter);
+		count++;
+	return (count);
 }
