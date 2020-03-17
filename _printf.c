@@ -18,9 +18,12 @@ int _printf(const char *format, ...)
 	int i, j, count = 0;
 	va_list vl;
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(vl, format);
 	i = 0;
-	while (format && format[i])
+	while (format[i])
 	{
 		if (format[i] != '%')
 		{
@@ -28,13 +31,13 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
+			i++; /* move i to next char */
 			j = 0;
 			while (types[j].s)
 			{
-				if (format[i + 1] == *(types[j].s))
+				if (format[i] == *(types[j].s))
 				{
 					count += types[j].fptr(vl);
-					i++; /* move i to the placeholder */
 				}
 				j++;
 			}
