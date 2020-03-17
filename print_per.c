@@ -18,4 +18,3 @@ int print_per(va_list args)
 	_putchar('%');
 	return (p);
 }
-
