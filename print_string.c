@@ -12,9 +12,8 @@
 
 int print_string(va_list args)
 {
-	
 	char *p;
-	
+
 	int s;
 
 
