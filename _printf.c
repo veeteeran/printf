@@ -53,6 +53,7 @@ int get_format(char format, va_list vl)
 		{'s', print_string},
 		{'d', print_dec},
 		{'i', print_int},
+		{'r', print_rev},
 		{'\0', '\0'}
 	};
 
