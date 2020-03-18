@@ -24,6 +24,7 @@ int print_per(va_list);
 int print_dec(va_list);
 int print_int(va_list);
 int print_rev(va_list);
+int print_rot(va_list);
 int _strlen(char *s);
 int get_format(char format, va_list vl);
 #endif /* HOLBERTON_H */
