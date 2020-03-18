@@ -12,9 +12,9 @@
 
 int print_string(va_list args)
 {
-
+	
 	char *p;
-
+	
 	int s;
 
 
@@ -22,7 +22,7 @@ int print_string(va_list args)
 	if (p == NULL)
 	{
 		_printf("(null)");
-		return (-1);
+		return (6);
 	}
 
 	s = _strlen(p);

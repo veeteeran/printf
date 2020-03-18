@@ -66,5 +66,5 @@ int get_format(char format, va_list vl)
 		}
 		i++;
 	}
-	return (-1);
+	return (0);
 }

@@ -15,7 +15,7 @@ int print_rev(va_list args)
 	if (s == NULL)
 	{
 		_printf("(null)");
-		return (-1);
+		return (6);
 	}
 
 	length = _strlen(s) - 1;
@@ -24,6 +24,6 @@ int print_rev(va_list args)
 		_putchar(s[length]);
 		length--;
 	}
-
-	return (length + 1);
+	length = _strlen(s);
+	return (length);
 }
