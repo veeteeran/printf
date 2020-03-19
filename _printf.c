@@ -54,6 +54,7 @@ int get_format(char format, va_list vl)
 		{'d', print_dec},
 		{'i', print_int},
 		{'r', print_rev},
+		{'R', print_rot},
 		{'\0', '\0'}
 	};
 
