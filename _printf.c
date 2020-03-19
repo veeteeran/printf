@@ -1,4 +1,7 @@
 #include "holberton.h"
+int print_rev(va_list);
+int print_rot(va_list);
+
 /**
  * _printf - prints formatted output
  * @format: string to print along with format specifiers
@@ -46,13 +49,15 @@ int _printf(const char *format, ...)
 
 int get_format(char format, va_list vl)
 {
-	int i = 0, count;
+	int i = 0, count = 0;
 
 	fmt_t types[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'d', print_dec},
 		{'i', print_int},
+		{'r', print_rev},
+		{'R', print_rot},
 		{'\0', '\0'}
 	};
 
@@ -60,10 +65,15 @@ int get_format(char format, va_list vl)
 	{
 		if (format == types[i].s)
 		{
-			count = types[i].fptr(vl);
+			count += types[i].fptr(vl);
 			return (count);
 		}
 		i++;
 	}
-	return (-1);
+	if (format != types[i].s)
+	{
+		count += _putchar('%');
+		count += _putchar(format);
+	}
+	return (count);
 }
