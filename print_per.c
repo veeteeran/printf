@@ -3,7 +3,8 @@
 
 /**
  * print_per - prints a percent sign
- *
+ * @args: char to compare
+
  * Return: void
  */
 

@@ -14,7 +14,7 @@ Function that produces output according to a format base on OPTIONS listed below
 
 %s - prints a string of characters
 
-%S - 
+%S -
 
 %i - prints an integer
 
