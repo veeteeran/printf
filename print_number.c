@@ -12,7 +12,6 @@ int print_number(int n)
 
 	while (counter < 9)
 	{
-		/* check for negative int */
 		if (n < 0)
 		{
 			/* add one to min_int to avoid errors*/
@@ -25,7 +24,6 @@ int print_number(int n)
 			_putchar('-');
 			count++;
 		}
-		/* avoids problems when next digit is zero */
 		digit = (n / base_ten) % 10;
 		/* decrease base_ten until reaches first place */
 		if (digit == 0 && skip_zero)
@@ -36,7 +34,6 @@ int print_number(int n)
 			_putchar(digit + '0');
 			count++;
 			base_ten /= 10;
-
 		}
 		counter++;
 	}
@@ -46,7 +43,6 @@ int print_number(int n)
 	else
 		_putchar(n % 10 + '0');
 		count++;
-
 	if (n < 0)
 		count++;
 	return (count);
