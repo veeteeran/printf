@@ -30,8 +30,7 @@ Viet Tran
 Gabriel Abdul-Raheem
 
 ## Descritption
-The \_printf function produces an output according to a format. Based on the chosen format specifier, the program will call a different function to produce the output.
-
+The \_printf function produces an output according to a format. Based on the chosen format specifier, the program will search for a match of the chosen format specifier to call a different function to correctly produce the ouput of the variable the specifier represents.
 ### Project contents
 
 Files | Short Description |
