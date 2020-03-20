@@ -14,7 +14,7 @@ Function that produces output according to a format base on OPTIONS listed below
 
 %s - prints a string of characters
 
-%S -
+%S - prints a string of characters where non printable characters are printed as \x
 
 %i - prints an integer
 
@@ -37,6 +37,21 @@ Function that produces output according to a format base on OPTIONS listed below
 %R - encodes string using rot13, prints encoded string
 .SH RETURN VALUE
 Upon success, return the number of characters printed excluding the null byte. -1 on error
+.SH EXAMPLE
+To print a string:
+	#include "lists.h"
+
+	char *string;
+
+	string = "Hello, world!";
+	_printf("%s\n", string);
+
+To print an int:
+	#include "lists.h"
+
+	int my_int = 7;
+
+	_printf("%d\n", int);
 .SH SEE ALSO
 man printf(3), man 3 printf
 .SH BUGS
