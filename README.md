@@ -46,7 +46,7 @@ Files | Short Description |
 |print\_rev.c | prints a string in reverse order |
 |print\_rot.c | prints a string in rot13|
 |print\_string.c | prints a string|
-|man\_3\_printf | 
+|man\_3\_printf | man page for **\_printf()** 
 ### Example
 To print a string:
 ```c
