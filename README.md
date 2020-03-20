@@ -29,16 +29,47 @@
 Viet Tran
 Gabriel Abdul-Raheem
 
+## Descritption
+The \_printf function produces an output according to a format. Based on the chosen format specifier, the program will search for a match of the chosen format specifier to call a different function to correctly produce the ouput of the variable the specifier represents.
 ### Project contents
 
-| Files | Description |
-|holberton.h| Header file containing all prototypes for functions|
-|***|***|
-|***|***|
-|***|***|
-|***|***|
-|***|***|
-|***|***|
-|***|***|
-|***|***|
-|***|***|
+Files | Short Description |
+| --- | --- |
+|holberton.h | Header file containing all protoypes for functions|
+|\_printf.c | prints formatted output |
+|\_putchar.c | writes the character to stdout|
+|print\_char | prints char to stdout using \_putchar |
+|print\_dec.c | print a decimal number |
+|print\_int.c | print an integer |
+|print\_number.c | print any number to stdout|
+|print\_rev.c | prints a string in reverse order |
+|print\_rot.c | prints a string in rot13|
+|print\_string.c | prints a string|
+|man\_3\_printf | man page for **\_printf()** 
+### Example
+To print a string:
+```c
+
+	#include "lists.h"
+	int main(void)
+{
+	char *string;
+
+	string = "Hello, world!";
+	_printf("%s\n", string);
+	return (0);
+}
+end
+```
+To print an int:
+```c
+	#include "lists.h"
+	int main(void)
+{
+	int my_int = 7;
+
+	_printf("%d\n", int);
+	return (0);
+}
+end
+```
