@@ -10,14 +10,14 @@ int print_bin(va_list args)
 {
 	unsigned long decimal_num = va_arg(args, int);
 	unsigned long binary_num = 0;
-	int remainder, tmp = 1, count = 0;
+	int remain, tmp = 1, count = 0;
 
 	while (decimal_num != 0)
 	{
-		remainder = decimal_num % 2;
+		remain = decimal_num % 2;
 		count++;
 		decimal_num = decimal_num / 2;
-		binary_num = binary_num + remainder * tmp;
+		binary_num = binary_num + remain * tmp;
 		tmp *= 10;
 	}
 	count--;

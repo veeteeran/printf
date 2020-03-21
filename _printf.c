@@ -70,11 +70,10 @@ int get_format(char format, va_list vl)
 		}
 		i++;
 	}
-	if (types[i].s == '\0')
+	if (format != types[i].s)
 	{
 		count += _putchar('%');
 		count += _putchar(format);
 	}
 	return (count);
 }
-
