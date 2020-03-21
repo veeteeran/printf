@@ -33,6 +33,8 @@ Function that produces output according to a format base on OPTIONS listed below
 %% - prints a percent sign
 
 %r - prints string in reverse
+
+%R - encodes string using rot13, prints encoded string
 .SH RETURN VALUE
 Upon success, return the number of characters printed excluding the null byte. -1 on error
 .SH EXAMPLE
