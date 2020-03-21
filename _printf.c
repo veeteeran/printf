@@ -57,6 +57,7 @@ int get_format(char format, va_list vl)
 		{'i', print_int},
 		{'r', print_rev},
 		{'R', print_rot},
+		{'b', print_bin},
 		{'\0', '\0'}
 	};
 
@@ -69,10 +70,11 @@ int get_format(char format, va_list vl)
 		}
 		i++;
 	}
-	if (format != types[i].s)
+	if (types[i].s == '\0')
 	{
 		count += _putchar('%');
 		count += _putchar(format);
 	}
 	return (count);
 }
+
