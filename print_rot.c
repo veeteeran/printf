@@ -24,6 +24,8 @@ int print_rot(va_list args)
 	}
 	len = _strlen(str);
 	ptr = malloc(sizeof(char) * len);
+	if (ptr == NULL)
+		return ('\0');
 	while (str[idx1])
 	{
 		idx2 = 0;
